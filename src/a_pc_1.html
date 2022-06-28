@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Story</title>
+    <link href="./js/aos/aos.css" rel="stylesheet">
+</head>
+<body>
+  <a href="" class="logo-a-wrap">
+    <img src="./img/logo_a.png" alt="">
+  </a>
+  <div class="deco-cow-wrap">
+    <img src="./img/deco_cloud_1.png" class="cloud-1">
+    <img src="./img/deco_cloud_2.png" class="cloud-2">
+    <img src="./img/deco_cow.png" class="cow">
+  </div>
+  <div class="burger">
+    <img src="./img/nav_burger.png" alt="">
+</div>
+  <main class="wrap">
+  
+  <div class="btn-top"></div>
+
+  <section class="section">
+    <span class="hero-spacer"></span>
+    <div class="hero-swiper-group">
+      <div class="hero-swiper-pict-wrap">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" id="hero-slide-01-pict">
+            <a href="">
+              <div class="cover"></div>
+            </a>
+          </div>
+          <div class="swiper-slide" id="hero-slide-02-pict">
+            <a href="">
+              <div class="cover"></div>
+            </a>
+          </div>
+          <div class="swiper-slide" id="hero-slide-03-pict">
+            <a href="">
+              <div class="cover"></div>
+            </a>
+          </div>
+        </div>
+        <div class="hero-swiper swiper-button-next swiper-btn">
+          <img src="./img/btn_swiper_next.svg" alt="">
+        </div>
+        <div class="hero-swiper swiper-button-prev swiper-btn">
+          <img src="./img/btn_swiper_prev.svg" alt="">
+        </div>
+        <div class="home-hero-swiper-pagination"></div>
+      </div>
+
+      <div class="hero-swiper-title-wrap">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="a_pc_2.html">
+              <img src="./img/slide_1_title.png" alt="">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="a_pc_2.html">
+              <img src="./img/slide_2_title.png" alt="">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="a_pc_2.html">
+              <img src="./img/slide_3_title.png" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>     
+  </section>
+
+  <div class="text-strip-wrap">
+    <div class="cover">
+      <p class="first-parallel"></p>
+    </div>
+    <div class="cover">
+      <p class="second-parallel"></p>
+    </div>
+    <div class="cover">
+      <p class="third-parallel"></p>
+    </div>
+  </div>
+  <a href="a_pc_2.html">
+    <img src="./img/a_con_1.png" class="a-con-1">
+    <img src="./img/a_con_2.png" class="a-con-2">
+  </a>
+</main>
+
+<footer class="footer">
+  
+      <img src="./img/footer_1.png" class="footer-1">
+
+  
+  
+</footer>
+
+<script src="./js/jquery/jquery-3.4.1.min.js"></script>
+<script src="./js/swiper-bundle.min.js"></script>
+<script src="./js/aos/aos.js"></script>
+<script>
+  AOS.init();
+
+  const heroPictContainer = document.querySelector('.hero-swiper-pict-wrap');
+  const heroTitleContainer = document.querySelector('.hero-swiper-title-wrap');
+  const heroPictSwiper = new Swiper(heroPictContainer, {
+    loop:true,
+    effect: "fade",
+    autoplay: {
+      delay: 2500
+    },
+    navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: '.home-hero-swiper-pagination',
+        clickable: true,
+      }
+  });
+  const heroTitleSwiper = new Swiper(heroTitleContainer, {
+    loop:true,
+    slidesPerView: 1,
+    //effect:'fade',
+    /*
+    on: {
+      slideChange: function(){
+        this.slide.addClass('show');
+      }
+    }
+    */
+  });
+  heroPictSwiper.controller.control = heroTitleSwiper;
+  heroTitleSwiper.controller.control = heroPictSwiper;
+ 
+
+</script>
+
+<script>
+const pTag1 = document.querySelector('.first-parallel')
+const pTag2 = document.querySelector('.second-parallel')
+const pTag3 = document.querySelector('.third-parallel')
+//const pTag4 = document.querySelector('.forth-parallel')
+
+const textArr1 = 'Yummy Milk Yummy Milk Yummy Milk Yummy Milk Yummy Milk Yummy Milk'.split(' ')
+const textArr2 = 'July 2022 Milk Story July 2022 Milk Story July 2022 Milk Story'.split(' ')
+const textArr3 = "Milk&Summer Milk&Summer Milk&Summer Milk&Summer Milk&Summer Milk&Summer".split(' ')
+//const textArr4 = 'Pure Moral Conscientious Meritorious Worthy Exemplary Upright '.split(' ')
+
+let count1 = 0
+let count2 = 0
+let count3 = 0
+//let count4 = 0
+
+initTexts(pTag1, textArr1);
+initTexts(pTag2, textArr2);
+initTexts(pTag3, textArr3);
+//initTexts(pTag4, textArr4);
+
+function initTexts(element, textArray) {
+  textArray.push(...textArray)
+  for (let i = 0; i < textArray.length; i++) {
+    element.innerText += `${textArray[i]}\u00A0\u00A0\u00A0\u00A0`
+  }
+}
+
+function marqueeText(count, element, direction) {
+  if (count > element.scrollWidth / 2) {
+    element.style.transform = `translate3d(0, 0, 0)`
+    count = 0
+  }
+  element.style.transform = `translate3d(${direction * count}px, 0, 0)`
+
+  return count
+}
+
+function animate() {
+  count1++
+  count2++
+  count3++
+  //count4++
+
+  count1 = marqueeText(count1, pTag1, -1)
+  count2 = marqueeText(count2, pTag2, 1)
+  count3 = marqueeText(count3, pTag3, -1)
+  //count4 = marqueeText(count4, pTag4, 1)
+
+  window.requestAnimationFrame(animate)
+}
+
+function scrollHandler() {
+  count1 += 15
+  count2 += 15
+  count3 += 15
+  //count4 += 15
+}
+
+window.addEventListener('scroll', scrollHandler);
+animate();
+</script>
+
+</body>
+</html>

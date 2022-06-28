@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+body {
+  @apply text-slate-800; overflow-x:hidden;
+}
+*,*::after,*::before{
+  box-sizing: border-box;
+}
+
+.footer {
+  @apply relative w-full max-w-[1590px] mx-auto border-t border-gray-400 mt-[150px] mb-20;
+  .footer-1{ 
+    @apply mt-6 ;
+  }
+  
+}
+.wrap {
+  position: relative; width:100%; max-width: 1920px; margin: 0 auto; 
+  height:100%;
+}
+.page-wrap-link {
+  @apply block relative w-full max-w-[1920px] mx-auto min-h-screen bg-center;
+  
+}
+.page-wrap-link {
+  &#depth-a-1 { 
+    background-image: url('../../public/img/a_2_full.jpg'); 
+    height:7384px; background-size: 1920px 7384px;
+  }
+  &#depth-b-1 { 
+    background-image: url('../../public/img/b_2_full.png'); 
+    height:5549px; background-size: 1920px 5549px;
+  }
+}
