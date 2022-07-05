@@ -54,6 +54,7 @@
     "url": ""
   },
   "dependencies": {
+    "css-vars-ponyfill": "^2.4.7",
     "gsap": "^3.9.1",
     "jquery": "^3.6.0",
     "pixi": "^0.3.1",

@@ -7,10 +7,54 @@
     <title>Guide</title>
 </head>
 <body>
-  <div class="container mx-auto flex flex-wrap flex-col md:flex-row sm:flex-col">
-    <div class="guide-sample-box"></div>
-    <div class="guide-sample-box"></div>
-    <div class="guide-sample-box"></div>
+  <div class="doc-wrap">
+
+    <h4 class="title-level-1">Layout</h4>
+    <span class="divider-block dark"></span>
+    <h4 class="title-level-2">Tailwind CSS 기본 Breakpoints</h4>
+    <p class="desc-level-1">
+        Tailwind CSS(3.x)의 기본 스타일은 Mobile First 원칙이 적용되며
+        모바일 기기를 위해 별도의 Breakpoint prefix를 사용하지 않는다. 
+    </p>
+    <table class="doc-table">
+      <thead>
+        <tr><th>Breakpoint</th><th>Minimum width</th><th>CSS</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>'sm'</td><td>640px</td><td>@media (min-width: 640px) { ... }</td></tr>
+        <tr><td>'md'</td><td>768px</td><td>@media (min-width: 768px) { ... }</td></tr>
+        <tr><td>'lg'</td><td>1024px</td><td>@media (min-width: 1024px) { ... }</td></tr>
+        <tr><td>'xl'</td><td>1280px</td><td>@media (min-width: 1280px) { ... }</td></tr>
+        <tr><td>'2xl'</td><td>1536px</td><td>@media (min-width: 1536px) { ... }</td></tr>
+      </tbody>
+    </table>
+    <span class="divider-block"></span>
+    <h4 class="title-level-2">Tailwind CSS - Container</h4>
+    <p class="desc-level-1">
+        Tailwind CSS(3.x)의 기본 스타일은 Mobile First 원칙이 적용되며
+        모바일 기기를 위해 별도의 Breakpoint prefix를 사용하지 않는다. 
+    </p>
+    <table class="doc-table">
+      <thead>
+        <tr><th>class</th><th>Breakpoint</th><th>Properties</th></tr>
+      </thead>
+      <tbody>
+        <tr rowspan="6"><td>container</td><td>none</td><td>width: 100%;</td></tr>
+        <tr><td> </td><td>sm(640px)</td><td>width: 640px;</td></tr>
+        <tr><td> </td><td>md(768px)</td><td>max-width: 768px;</td></tr>
+        <tr><td> </td><td>lg(1024px)</td><td>max-width: 1024px;</td></tr>
+        <tr><td> </td><td>xl(1280px)</td><td>max-width: 1280px;</td></tr>
+        <tr><td> </td><td>2xl(1536px)</td><td>max-width: 1536px;</td></tr>
+      </tbody>
+    </table>
+
+    <div class="code-wrap">
+      <pre>
+
+      </pre>
+    </div>
+    
+
   </div>
 
 </body>

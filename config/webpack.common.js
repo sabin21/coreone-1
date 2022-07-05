@@ -5,10 +5,10 @@ const webpack = require('webpack');
 const paths = require('./paths')
 const pages = [
   "index","home","concept",
-  'guide_layout',
   "a_pc_1",
-  'component_1','sample_landing_1','cards_1'
-  
+  'guide_color','guide_typo','guide_layout','guide_spacing',
+  'component_1','sample_landing_1','cards_1',
+  'carousel_1','scroll_action_01'
 ]
 
 module.exports = {

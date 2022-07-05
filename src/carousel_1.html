@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide</title>
+    <link href="./js/swiper/4.5.1/swiper.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="doc-wrap">
+
+<h4 class="title-level-1">Carousel-1</h4>
+
+<div class="carousel-wrap">
+    <div class="swiper-container case-01">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="case-01-cover-1">
+                <span class="cover"></span>
+                <div class="headline-wrap">
+                    <h2>브랜드 스토리 헤드라인<br>설명 텍스트</h2>
+                </div>
+            </div>
+            <div class="swiper-slide" id="case-01-cover-2">
+                <span class="cover"></span>
+                <div class="headline-wrap">
+                    <h2>브랜드 스토리 헤드라인<br>설명 텍스트</h2>
+                </div>
+            </div>
+            <div class="swiper-slide" id="case-01-cover-3">
+                <span class="cover"></span>
+                <div class="headline-wrap">
+                    <h2>브랜드 스토리 헤드라인<br>설명 텍스트</h2>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination" id="case-01-pagination"></div>
+        <div class="swiper-button-prev" id="case-01-button-prev"></div>
+        <div class="swiper-button-next" id="case-01-button-next"></div>
+    </div>
+</div>
+
+<div class="carousel-wrap mt-20">
+<div class="swiper-container case-02">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" id="case-02-cover-1">
+            <span class="cover"></span>
+            <div class="hero-copy copy-1">
+                
+            </div>
+        </div>
+        <div class="swiper-slide" id="case-02-cover-2">
+            <span class="cover"></span>
+        <div class="hero-copy">
+            
+        </div>
+        </div>
+        <div class="swiper-slide" id="case-02-cover-3">
+            <span class="cover"></span>
+        <div class="hero-copy">
+            
+        </div>
+        </div>
+    </div>
+    <div class="swiper-button-next swiper-btn" id="case-02-button-next"></div>
+    <div class="swiper-button-prev swiper-btn" id="case-02-button-prev"></div>
+    <div class="swiper-pagination" id="case-02-pagination"></div>
+</div>
+</div>
+
+<div class="carousel-wrap mt-20">
+    <div class="swiper-container case-03">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="case-03-cover-1">
+
+            </div>
+        </div>
+    </div>
+</div>
+            
+
+<span class="divider-block"></span>
+
+</div>
+
+<script src="./js/jquery/jquery-3.4.1.min.js"></script>
+<script src="./js/swiper/4.5.1/swiper.min.js"></script>
+<script>
+    var swiperContainerCase01 = document.querySelector('.case-01');
+    var swiperCase01 = new Swiper(swiperContainerCase01, {
+        slidePerView: 1,
+        loop: true,
+        effect: 'fade',
+        autoplay:{
+            delay:2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '#case-01-pagination',
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: '#case-01-button-next',
+            prevEl: '#case-01-button-prev',
+        },
+    });
+
+    var swiperContainerCase02 = document.querySelector('.case-02');
+    var swiperCase02 = new Swiper(swiperContainerCase02, {
+        effect: "fade",
+        loop: true,
+  
+        autoplay: {
+            delay: 3500,
+            waitForTransition: true,
+            disableOnInteraction: false,
+        },    
+        navigation: {
+            nextEl: "#case-02-button-next",
+            prevEl: "#case-02-button-prev",
+        },
+        pagination: {
+            el: "#case-02-pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+                    var bu = '<span class="' + className + '">' + '<svg class="fp-arc-loader" width="50" height="50">' +
+                    '<circle class="path" cx="50%" cy="50%" r="23" fill="none"  stroke="#FFF"' +
+                    'stroke-opacity="1" stroke-width="1px"></circle>' +
+                    '<circle cx="50%" cy="50%" r="5" fill="#FFF"></circle>' +
+                    '</svg></span>';
+            return bu;
+            },
+        },
+        on: {
+            slideChange: function () { 
+                var $slides = this.slides; 
+                $slides.children('.cover').css('animation', 'none'); 
+                $slides.eq(this.activeIndex).children('.cover').css({ 
+                    'animation-name': 'grow2', 
+                    'animation-duration': '1s' 
+                });
+            }, 
+        }
+    });
+</script>
+
+</body>
+</html>
